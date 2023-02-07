@@ -61,6 +61,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+A closure is a function inside another function, it's used to access a variable that is held in another functions scope.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -82,9 +83,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+The return function, it's a function inside another function that has acess to the name variable that is held outside of its own scope.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+the name variable will stay the same but the newRoll variable will change.
+
 c. What is the lexical scope of `newRoll`? 
 
+return function()
 
 ### Task 3 - Stretch Goals
 

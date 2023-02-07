@@ -31,10 +31,17 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   
   1. What is the difference between counter1 and counter2?
   
+counter1 uses a closure to access the count variable and will continue to count everytime the function is called. Counter2 will just return 1
+
   2. Which of the two uses a closure? How can you tell?
+
+  there is a function inside a function and it is accessing the count variable from outside its own scope
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+If you want to protect the variables from the outer scope, and if you wanted to continue counting each time the function was called, counter1 is better. Counter 2 would just countinue to return 1, so I don't know what the best scenario would be.
+
 */
 
 // counter1 code
@@ -64,8 +71,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+   return Math.floor(Math.random(3));
 }
 
 
@@ -83,8 +90,17 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(inning, inningNumber ){
+  let homeTeam = 0;
+  let awayTeam = 0;
+  for (let i = 0; i < inningNumber; i++){
+    homeTeam = homeTeam + inning();
+    awayTeam = awayTeam + inning();
+  }
+  return{
+    Home: homeTeam,
+    Away: awayTeam,
+  }
 }
 
 
@@ -101,9 +117,10 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-
+function getInningScore(inning) {
+ let Home = inning();
+ let Away = inning();
+return{"Home": Home, "Away": Away};
 }
 
 
